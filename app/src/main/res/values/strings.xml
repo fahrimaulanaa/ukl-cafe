@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">uklcafe</string>
+    <string name="app_name">Aplikasi Admin Coffee</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -27,4 +27,6 @@
     <string name="daftar_menu">Daftar Menu</string>
     <string name="hapus">Hapus</string>
     <string name="ubah">Ubah</string>
+    <string name="id_transaksi">Id Transaksi:</string>
+    <string name="logout_sekarang">Logout Sekarang</string>
 </resources>

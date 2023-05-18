@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btn_transaksi: Button
     private lateinit var btn_user: Button
     private lateinit var btn_menu: Button
+    private lateinit var btn_logout: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +34,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_transaksi = findViewById(R.id.btn_transaksi)
         btn_user = findViewById(R.id.btn_user)
         btn_menu = findViewById(R.id.btn_menu)
+        btn_logout = findViewById(R.id.btn_logout)
         btn_transaksi.setOnClickListener(this)
+        btn_logout.setOnClickListener(this)
         btn_user.setOnClickListener(this)
         btn_menu.setOnClickListener(this)
 
@@ -51,6 +54,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn_menu -> {
                 val intent = Intent(this, MenuActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.btn_logout -> {
+                auth.signOut()
+                Toast.makeText(this, "Logout Berhasil", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
         }

@@ -59,12 +59,12 @@ class MenuAdapter(private var menuList: List<Menu>) :
         holder.btnHapus.setOnClickListener{
             val db = FirebaseFirestore.getInstance()
             val docRef = db.collection("menu").document(currentMenu.id)
-            val img = currentMenu.gambar
+            val img = menuList[position].nama
             docRef.delete()
                 .addOnSuccessListener {
                     Toast.makeText(holder.itemView.context, "Berhasil Menghapus Menu", Toast.LENGTH_SHORT).show()
                     val storageRef = Firebase.storage.reference
-                    val imgRef = storageRef.child("images/$img")
+                    val imgRef = storageRef.child("images/$img.jpg")
                     imgRef.delete()
                         .addOnSuccessListener {
                             Toast.makeText(holder.itemView.context, "Berhasil Menghapus Gambar", Toast.LENGTH_SHORT).show()
