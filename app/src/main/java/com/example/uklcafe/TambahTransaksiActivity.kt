@@ -39,7 +39,8 @@ class TambahTransaksiActivity : AppCompatActivity() {
                 val tanggal = getCurrentDate()
                 val transaksi = Transaksi(idTransaksi, namaCustomer, menu, harga.toString(), tanggal, payment)
                 db.collection("transaksi")
-                    .add(transaksi)
+                    .document(idTransaksi)
+                    .set(transaksi)
                     .addOnSuccessListener {
                         Toast.makeText(this, "Transaksi berhasil disimpan", Toast.LENGTH_SHORT).show()
                         finish()
@@ -49,6 +50,7 @@ class TambahTransaksiActivity : AppCompatActivity() {
                     }
             }
         }
+
     }
 
     private fun setupSpinnerMenu() {

@@ -7,9 +7,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 class MenuAdapter(private var menuList: List<Menu>) :
     RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
@@ -20,6 +24,7 @@ class MenuAdapter(private var menuList: List<Menu>) :
         val tvDeskripsi: TextView = itemView.findViewById(R.id.tv_deskripsi)
         val tvHarga: TextView = itemView.findViewById(R.id.tv_harga)
         val btnUbah: Button = itemView.findViewById(R.id.btn_ubah)
+        val btnHapus: Button = itemView.findViewById(R.id.btn_hapus)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
@@ -50,7 +55,30 @@ class MenuAdapter(private var menuList: List<Menu>) :
             intent.putExtra("deskripsi", currentMenu.deskripsi)
             context.startActivity(intent)
         }
+
+        holder.btnHapus.setOnClickListener{
+            val db = FirebaseFirestore.getInstance()
+            val docRef = db.collection("menu").document(currentMenu.id)
+            val img = currentMenu.gambar
+            docRef.delete()
+                .addOnSuccessListener {
+                    Toast.makeText(holder.itemView.context, "Berhasil Menghapus Menu", Toast.LENGTH_SHORT).show()
+                    val storageRef = Firebase.storage.reference
+                    val imgRef = storageRef.child("images/$img")
+                    imgRef.delete()
+                        .addOnSuccessListener {
+                            Toast.makeText(holder.itemView.context, "Berhasil Menghapus Gambar", Toast.LENGTH_SHORT).show()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(holder.itemView.context, "Gagal Menghapus Gambar", Toast.LENGTH_SHORT).show()
+                        }
+                }
+                .addOnFailureListener {
+                    Toast.makeText(holder.itemView.context, "Gagal Menghapus Menu", Toast.LENGTH_SHORT).show()
+                }
+        }
     }
+
 
     override fun getItemCount(): Int {
         return menuList.size
