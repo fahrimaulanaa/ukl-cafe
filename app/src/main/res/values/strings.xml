@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">uklcafe</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="version_1_0">Version 1.0</string>
+    <string name="seputar_transaksi">Seputar Transaksi</string>
+    <string name="aselole_coffee">Aselole Coffee</string>
+    <string name="seputar_user">Seputar User</string>
+    <string name="seputar_menu">Seputar Menu</string>
+    <string name="seputar_meja">Seputar Meja</string>
+    <string name="transaksi">Transaksi</string>
+    <string name="tambah_transaksi">Tambah Transaksi</string>
+    <string name="daftar_transaksi">Daftar Transaksi</string>
+    <string name="user">User</string>
+    <string name="daftarkan_user">Daftarkan User</string>
+    <string name="daftar_user">Daftar User</string>
+    <string name="tambah_user">Tambah User</string>
+    <string name="menu">Menu</string>
+    <string name="tambah_menu">Tambah Menu</string>
+    <string name="daftar_menu">Daftar Menu</string>
+    <string name="hapus">Hapus</string>
+    <string name="ubah">Ubah</string>
+</resources>

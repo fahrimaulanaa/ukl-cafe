@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="14dp"
+    tools:context=".TambahMenu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/placeholder_image"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxBackgroundMode="outline">
+
+            <EditText
+                android:id="@+id/et_nama_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Menu"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxBackgroundMode="outline">
+
+            <EditText
+                android:id="@+id/et_harga_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Harga Menu"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxBackgroundMode="outline">
+
+            <EditText
+                android:id="@+id/et_deskripsi_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Deskripsi Menu"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_kirim"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tambah Menu" />
+
+    </LinearLayout>
+
+</ScrollView>
